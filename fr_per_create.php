@@ -31,7 +31,7 @@ if ( !empty($_POST)) { // if not first time through
 	$email = $_POST['email'];
 	$mobile = $_POST['mobile'];
 	$password = $_POST['password'];
-	$passwordhash = MD5($password);
+	$passwordhash = password_hash($password, PASSWORD_DEFAULT);
 	$title =  $_POST['title'];
 	$picture = $_POST['picture']; // not used
 	
