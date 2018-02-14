@@ -116,7 +116,7 @@ if ( !empty($_POST)) { // if not first time through
 		$pdo = Database::connect();
 		
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "INSERT INTO fr_persons (fname,lname,email,mobile,password,title,
+		$sql = "INSERT INTO fr_persons (fname,lname,email,mobile,bcrypt,title,
 		filename,filesize,filetype,filecontent) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($fname,$lname,$email,$mobile,$passwordhash,$title,
