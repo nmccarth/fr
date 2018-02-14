@@ -16,7 +16,8 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 	// initialize $_POST variables
 	$username = $_POST['username']; // username is email address
 	$password = $_POST['password'];
-	$passwordhash = password_hash($password, PASSWORD_DEFAULT);
+	$passwordhash = md5($password);
+	$bcryptHash = password_hash($password, PASSWORD_DEFAULT);
 	// echo $password . " " . $passwordhash; exit();
 	// robot 87b7cb79481f317bde90c116cf36084b
 		
